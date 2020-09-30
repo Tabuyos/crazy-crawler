@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# PyCharm Environment
+.idea
+
+# user customize folder
+dataset/
+logs/

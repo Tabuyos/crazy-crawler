@@ -12,7 +12,7 @@ from os.path import abspath
 
 from scrapy import cmdline
 
-from crazy_crawler.crazy_crawler.spiders.blog_spider import BlogSpider
+from crazy_crawler.crazy_crawler.spiders.crazy_spider import CrazySpider
 
 
 def change_dir(path):
@@ -43,4 +43,5 @@ def start_scrapy(path, name):
 
 
 if __name__ == '__main__':
-    start_scrapy("crazy_crawler", BlogSpider.name)
+    start_scrapy("crazy_crawler", CrazySpider.name)
+

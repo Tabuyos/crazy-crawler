@@ -50,7 +50,7 @@ ROBOTSTXT_OBEY = False
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'crazy_crawler.crazy_crawler.middlewares.CrazyCrawlerDownloaderMiddleware': 543,
+    'crazy_crawler.crazy_crawler.selenium_middlewares.SeleniumDownloaderMiddleware': 543
 }
 
 # Enable or disable extensions
@@ -85,5 +85,7 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+SELENIUM_TIMEOUT = 20
 
 LOG_LEVEL = 'ERROR'

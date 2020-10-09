@@ -1,0 +1,48 @@
+{
+  "BaseInfo": {
+    "Code": "woodenrobot0",
+    "Name": "woodenrobot0",
+    "Url": "https://woodenrobot.me"
+  },
+  "CrawlerInfo": {
+    "Article": {
+      "XPath": "//*[@id='posts']/article",
+      "ContentElements": [
+        {
+          "Code": 1,
+          "Name": "title",
+          "XPath": "./header/h2/a/text()",
+          "Result": {
+            "Type": "string",
+            "Align": "center"
+          }
+        },
+        {
+          "Code": 2,
+          "Name": "catalog",
+          "XPath": "./header/div/span[2]/span[4]/a/span/text()",
+          "Result": {
+            "Type": "string",
+            "Align": "center"
+          }
+        },
+        {
+          "Code": 3,
+          "Name": "content",
+          "XPath": "./header/div/span[1]/time/text()",
+          "Result": {
+            "Type": "string",
+            "Align": "left"
+          }
+        }
+      ],
+      "ChildPages": {
+        "Name": "下一页",
+        "XPath": "//a[contains(@class, 'extend') and contains(@class, 'next')]"
+      }
+    },
+    "UserInfo": {
+
+    }
+  }
+}

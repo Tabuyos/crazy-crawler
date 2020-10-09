@@ -1,19 +1,17 @@
 {
   "BaseInfo": {
-    "Code": "woodenrobot",
-    "Name": "woodenrobot",
-    "Url": "https://woodenrobot.me"
+    "Code": "jalan",
+    "Name": "jalan",
+    "Url": "http://jalan.space"
   },
   "CrawlerInfo": {
     "Article": {
-      "Cycle": {
-        "XPath": "//*[@id=\"posts\"]/article"
-      },
+      "XPath": "//*[@id='layout']/div[1]/div/div",
       "ContentElements": [
         {
           "Code": 1,
           "Name": "title",
-          "XPath": "//*[@id=\"posts\"]/article[1]/header/h2/a/text()",
+          "XPath": "./h1/a/text()",
           "Result": {
             "Type": "string",
             "Align": "center"
@@ -22,7 +20,7 @@
         {
           "Code": 2,
           "Name": "catalog",
-          "XPath": "//*[@id=\"posts\"]/article[1]/header/div/span[2]/span[4]/a/span/text()",
+          "XPath": "./div[1]/text()",
           "Result": {
             "Type": "string",
             "Align": "center"
@@ -31,7 +29,7 @@
         {
           "Code": 3,
           "Name": "content",
-          "XPath": "//*[@id=\"posts\"]/article[1]/header/div/span[1]/time/text()",
+          "XPath": "./div[2]/text()",
           "Result": {
             "Type": "string",
             "Align": "left"
@@ -40,7 +38,7 @@
       ],
       "ChildPages": {
         "Name": "下一页",
-        "XPath": "//a[@class='extend next']"
+        "XPath": "//a[contains(@class, 'extend') and contains(@class, 'next')]"
       }
     },
     "UserInfo": {

@@ -16,7 +16,11 @@ from op_json.op_json import OperateJson
 
 
 class BlogSpider(Spider):
-    name = 'woodenrobot'
+    project_name = "crazy-crawler"
+    root_path = os.path.join(abspath(__file__).split(project_name)[0], project_name)
+    dataset = OperateJson(os.path.join(root_path, "config/WebSiteListing.json")).load_json()
+    site_list = dataset.get("Listing")
+    name = site_list[0]
     start_urls = ['http://woodenrobot.me']
 
     def parse(self, response, **kwargs):

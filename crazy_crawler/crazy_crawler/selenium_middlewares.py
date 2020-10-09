@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
  @Author Tabuyos
- @Time 2020/10/8 23:39
+ @Time 2020/10/9 10:52
  @Site www.tabuyos.com
  @Email tabuyos@outlook.com
  @Description
@@ -51,13 +51,11 @@ class SeleniumDownloaderMiddleware:
         :param spider: Spider对象
         :return: HtmlResponse
         """
-        print("request.url", request.url)
         self.logger.debug('Chrome is Starting')
         flag = False
         try:
             site_info = request.meta.get("site_info")
             if request.meta.get("first"):
-                print(1)
                 self.browser.get(request.url)
             else:
                 try:
@@ -65,10 +63,9 @@ class SeleniumDownloaderMiddleware:
                     self.wait.until(EC.presence_of_element_located((By.XPATH, next_xpath)))
                     next_page = self.wait.until(EC.element_to_be_clickable((By.XPATH, next_xpath)))
                     if next_page:
-                        print(2)
                         next_page.click()
                     else:
-                        print(3)
+                        pass
                 except TimeoutException:
                     flag = True
 
